@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{# {% block title%}Login{% endblock %} #}
+
+{% block head %}
+<style>
+    .error {
+        background-color: #FF0000;
+        color: #FFF;
+        padding: 3px;
+        border-radius: 3px;
+        display: inline-block;
+    }
+
+    .correct {
+        background-color: #00FF00;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+{# % if test %} 0 {% endif %}<br>
+{% if not test %} 1 {% endif %}<br>
+{% if test and test==True %} 2 {% endif %}<br>
+{% if test and test==False %} 3 {% endif %}<br>
+{% if test==True %} 3 {% endif %}<br>
+{% if test==False %} 4 {% endif %}<br> #}
+
+<form action="login" method="POST">
+    {% if is_invalid %}<div class="error">Username or password do not match to any accounts!</div><br><br>{% endif %}
+    <label>Username:</label><br>
+    <input type="text" name="username"><br>
+    <label>Password:</label><br>
+    <input type="password" name="password"><br>
+    Remember me <input type="checkbox" name="remember"><br>
+    <input type="submit" value="Log in">
+</form>
+{% endblock content %}

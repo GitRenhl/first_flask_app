@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{# {% block title%}Main Page{% endblock %} #}
+
+<!-- HEADER -->
+{% block header %}
+{% if not user %}<a id="link-login" href="/login">Login</a>
+{% else %}Hello <strong><a href="/user/{{ user }}">{{ user }}</a> </strong><a id="link-logout" href="/logout">Logout</a>
+{% endif %}
+<a href="/add_game">add game</a>
+{% endblock header %}
+
+<!-- CONTENT -->
+{% block content %}
+<div style="padding:30px 0 30px 0; text-align:center;">
+    <h1>This is the main page</h1>
+    <p>Witam na mojej stronie</p>
+</div>
+{% endblock %}
+
+<!-- FOOTER -->
+{% block footer %}
+<a href="/hello">hello</a>
+{% endblock footer %}

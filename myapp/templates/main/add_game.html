@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title%}Add Game{% endblock %}
+
+{% block content %}
+<form action="/add_game" method="post">
+    <div>
+        <p>Name:</p>
+        <input type="text" name="game_name">
+    </div>
+    <div>
+        <p>Release date:</p>
+        <input type="date" name="game_rdate">
+    </div>
+    <div>
+        <p>Rate:</p>
+        <input type="range" min="0" max="10" value="5" step="0.5" name="game_rate" oninput="rangeValueText.value=value;"
+            id="rangeValueSlider">
+        <output name="rangeResult" id="rangeValueText">5</output>
+    </div>
+    <input type="submit" value="Send">
+</form>
+{% endblock %}
